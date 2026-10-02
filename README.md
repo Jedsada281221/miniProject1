@@ -35,3 +35,20 @@ GET,/api/books/:id,ดึงรายการหนังสือตาม ID,
 POST,/api/books,เพิ่มหนังสือเล่มใหม่,"JSON Body (title, author, category, status)","201 , 400 
 PATCH,/api/books/:id,แก้ไขข้อมูล/สถานะหนังสือ,Route Parameter (:id) + JSON Body,"200 , 404 
 DELETE,/api/books/:id,ลบรายการหนังสือ,Route Parameter (:id),"204 No Content, 404 
+
+## 🔍 หลักฐานการดีบักและการทดสอบ (Debugging Proofs)
+
+### 1. ฝั่ง Backend Server (Node.js Console Log)
+แสดงการรันเซิร์ฟเวอร์สำเร็จบนพอร์ต 3000 ด้วย `nodemon`:
+
+![Server Console Log](Screenshot135020.png)
+
+### 2. ฝั่ง Client Browser (DevTools Network Tab)
+แสดงการยิง REST API ผ่าน `fetch()` ได้รับ HTTP Status `200 OK`, `201 Created` และ `204 No Content` เรียบร้อย:
+
+![Browser DevTools Network Status](Screensho134936.png)
+
+### 3. การทดสอบ Error Handling (Status 400 Bad Request)
+แสดงการตอบกลับ Status 400 เมื่อผู้ใช้ส่งข้อมูลฟอร์มไม่ครบถ้วน:
+
+![Status 400 Bad Request](Screenshot35539.png)
