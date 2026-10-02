@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reading List App</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="container">
+    <h1>📚 My Reading List</h1>
+
+    <section class="card">
+      <h2>เพิ่มหนังสือใหม่</h2>
+      <form id="addBookForm">
+        <input type="text" id="title" placeholder="ชื่อหนังสือ">
+        <input type="text" id="author" placeholder="ชื่อผู้แต่ง">
+        <input type="text" id="category" placeholder="หมวดหมู่">
+        <select id="status">
+          <option value="unread">ยังไม่อ่าน</option>
+          <option value="reading">กำลังอ่าน</option>
+          <option value="read">อ่านแล้ว</option>
+        </select>
+        <button type="submit" class="btn btn-primary">เพิ่มรายการ</button>
+      </form>
+    </section>
+
+    <section class="filter-section">
+      <label for="filterStatus">กรองตามสถานะ:</label>
+      <select id="filterStatus">
+        <option value="">ทั้งหมด</option>
+        <option value="unread">ยังไม่อ่าน</option>
+        <option value="reading">กำลังอ่าน</option>
+        <option value="read">อ่านแล้ว</option>
+      </select>
+    </section>
+
+    <section>
+      <h2>รายการหนังสือทั้งหมด</h2>
+      <div id="bookList" class="book-grid"></div>
+    </section>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
